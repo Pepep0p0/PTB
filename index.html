@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for SEO & Social Sharing -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive memory museum - a personal journey through relationship milestones" />
+  <meta name="keywords" content="interactive, museum, memories, relationship, javascript" />
+  <meta property="og:title" content="Museum of Us" />
+  <meta property="og:description" content="A personalized interactive museum experience" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/museum-of-us" />
+  <meta property="og:image" content="https://yourusername.github.io/museum-of-us/assets/screenshot.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <title>Museum of Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Avatar Creation -->
+<section id="avatarScreen" class="screen">
+  <h1>Museum of Us</h1>
+  <p>Create your visitor avatar</p>
+
+  <form id="avatarForm" aria-label="Avatar creation form">
+    <input id="firstName" placeholder="First name" required aria-label="First name" />
+    <input id="lastName" placeholder="Last name" required aria-label="Last name" />
+    
+    <select id="appearance" aria-label="Appearance style">
+      <option value="soft">Soft</option>
+      <option value="classic">Classic</option>
+      <option value="warm">Warm</option>
+    </select>
+
+    <div id="avatarPreview" role="img" aria-label="Avatar preview"></div>
+
+    <button type="submit" id="startTour">Start Tour</button>
+  </form>
+</section>
+
+<!-- Museum -->
+<section id="museumScreen" class="screen hidden">
+  <header>
+    <div id="kissCounter" aria-live="polite">💋 0</div>
+    <button id="muteToggle" aria-label="Toggle background music">Mute</button>
+  </header>
+
+  <h2 id="roomTitle"></h2>
+  <div id="room" role="region" aria-label="Museum room"></div>
+</section>
+
+<!-- Valentine Gate -->
+<section id="valentineScreen" class="screen hidden">
+  <h2>Will you be my Valentine?</h2>
+
+  <label>
+    <input type="checkbox" id="valentineCheck" />
+    I agree to send Dedso rupiya
+  </label>
+
+  <button id="valentineContinue" disabled>Continue</button>
+</section>
+
+<!-- Final Coupon -->
+<section id="couponScreen" class="screen hidden">
+  <div class="coupon">
+    <h2>Kiss Coupon</h2>
+    <p>This certifies the holder has earned</p>
+    <h3 id="finalKisses"></h3>
+    <p>kisses. Redeemable anytime.</p>
+  </div>
+</section>
+
+<!-- Artifact Modal -->
+<div id="artifactModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modalContent">
+    <p id="artifactQuestion"></p>
+    <textarea id="artifactAnswer" placeholder="Type your answer here..." aria-label="Your answer"></textarea>
+    <button id="unlockArtifact">Unlock Artifact</button>
+  </div>
+</div>
+
+<!-- Reset Button -->
+<button id="resetBtn" style="position:fixed;bottom:10px;right:10px;background:#ff6b6b;color:white;border:none;padding:0.5rem 1rem;border-radius:6px;cursor:pointer;z-index:100;" title="Reset all progress">Reset</button>
+
+<script src="script.js"></script>
+</body>
+</html>
