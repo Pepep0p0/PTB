@@ -1,0 +1,8 @@
+├── index.html          # Main HTML file
+├── style.css           # Stylesheet
+├── script.js           # Application logic
+├── assets/             # Media files
+│   └── music.mp3       # Optional background track
+├── .github/workflows/  # CI/CD configuration
+├── LICENSE            # MIT License
+└── README.md          # This file
